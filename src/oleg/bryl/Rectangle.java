@@ -1,4 +1,5 @@
 package oleg.bryl;
 
-public class Rectangle {
+public class Rectangle extends Form {
+
 }
