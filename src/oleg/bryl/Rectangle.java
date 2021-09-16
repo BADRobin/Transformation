@@ -22,12 +22,40 @@ public class Rectangle extends Form {
 
     @Override
     public double perimeter() {
-        return 0;
+        return 2 * (Math.abs(bottomRightPoint.getX() - inUpLeftPoint.getX()) +
+                Math.abs(bottomRightPoint.getY() - inUpLeftPoint.getY()));
     }
 
     @Override
     public void moving(double x, double y) {
+        inUpLeftPoint.setX(inUpLeftPoint.getX() + x);
+        inUpLeftPoint.setY(inUpLeftPoint.getY() + x);
+        bottomRightPoint.setX(bottomRightPoint.getX());
+        bottomRightPoint.setY(bottomRightPoint.getY());
+    }
 
+    public Point getInUpLeftPoint() {
+        return inUpLeftPoint;
+    }
 
+    public void setInUpLeftPoint(Point inUpLeftPoint) {
+        this.inUpLeftPoint = inUpLeftPoint;
+    }
+
+    public Point getBottomRightPoint() {
+        return bottomRightPoint;
+    }
+
+    public void setBottomRightPoint(Point bottomRightPoint) {
+        this.bottomRightPoint = bottomRightPoint;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "inUpLeftPoint=" + inUpLeftPoint +
+                ", bottomRightPoint=" + bottomRightPoint +
+                super.toString() +
+                '}';
     }
 }
