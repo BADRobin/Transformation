@@ -8,8 +8,13 @@ public class Circle {
         this.circleCenter = circleCenter;
     }
 
-    public Circle(double x, double y, double radius){
+    public Circle(double x, double y, double radius) {
 
     }
 
+    private void checkR(double radius) throws IllegalArgumentException{
+        if (radius <=0 ){
+            throw new IllegalArgumentException("radius must be bigger then 000");
+        }this.radius = radius;
+    }
 }
